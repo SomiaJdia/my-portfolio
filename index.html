@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jdia Somia | 3D Portfolio</title>
+    <meta name="description" content="Portfolio 3D futuriste de Jdia Somia, Développeuse Full Stack, Data & AI.">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&family=Outfit:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Background Canvas for generic particles -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="#home" class="logo">JS<span class="neon-text">.</span></a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Work</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero section">
+            <div class="hero-content">
+                <p class="greeting gs-reveal">Welcome to my space</p>
+                <h1 class="name gs-reveal">
+                    Hi, I'm <br><span class="neon-text type-text">Jdia Somia</span><span class="cursor">_</span>
+                </h1>
+                <h2 class="role gs-reveal">Full Stack Developer | Data Engineer | AI Enthusiast</h2>
+                <p class="hero-desc gs-reveal">
+                    Building immersive digital experiences and intelligent data-driven solutions for the future.
+                </p>
+                <div class="hero-buttons gs-reveal">
+                    <a href="#projects" class="btn btn-primary glow-btn">View My Work</a>
+                    <a href="#contact" class="btn btn-secondary">Contact Me</a>
+                </div>
+            </div>
+
+            <!-- Conteneur pour l'objet 3D Hero -->
+            <div id="hero-3d-container" class="gs-reveal"></div>
+
+            <div class="scroll-indicator">
+                <div class="mouse"></div>
+                <p>Scroll Down</p>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about section">
+            <div class="section-header gs-reveal">
+                <h2>About <span class="neon-text">Me</span></h2>
+                <div class="glow-line"></div>
+            </div>
+            <div class="about-grid">
+                <div class="about-text glass-panel gs-reveal">
+                    <p>Actuellement en deuxième année de génie informatique à l'<strong>ENSA de Tanger</strong>, je suis
+                        à l'intersection du développement web moderne et de l'intelligence artificielle.</p>
+                    <p>Mon objectif est de concevoir des systèmes complexes, performants et interactifs, tout en
+                        appliquant la Data Science pour résoudre des problèmes analytiques réels. Je suis en recherche
+                        active d'un stage (PFA) pour relever de nouveaux défis technologiques.</p>
+                </div>
+                <div class="about-stats gs-reveal">
+                    <div class="stat-box glass-panel" data-tilt data-tilt-glare data-tilt-max-glare="0.5">
+                        <h3 class="neon-text">2026</h3>
+                        <p>Graduation</p>
+                    </div>
+                    <div class="stat-box glass-panel" data-tilt data-tilt-glare data-tilt-max-glare="0.5">
+                        <h3 class="neon-text">10+</h3>
+                        <p>Projects</p>
+                    </div>
+                    <div class="stat-box glass-panel" data-tilt data-tilt-glare data-tilt-max-glare="0.5">
+                        <h3 class="neon-text">3+</h3>
+                        <p>Domains (Web/Data/AI)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience & Education Timeline -->
+        <section id="experience" class="timeline-section section">
+            <div class="section-header gs-reveal">
+                <h2>My <span class="neon-text">Journey</span></h2>
+                <div class="glow-line"></div>
+            </div>
+
+            <div class="timeline">
+                <!-- Ligne centrale -->
+                <div class="timeline-line"></div>
+
+                <!-- Item 1 (Right) -->
+                <div class="timeline-item right gs-reveal timeline-anim">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content glass-panel" data-tilt data-tilt-max="5" data-tilt-glare
+                        data-tilt-max-glare="0.2">
+                        <span class="date neon-text">2025 - 2026</span>
+                        <h3>Cycle d'Ingénieur en Génie Informatique</h3>
+                        <h4>ENSA Tanger</h4>
+                        <p>Apprentissage approfondi en ingénierie logicielle, algorithmique avancée, et conception de
+                            systèmes d'information.</p>
+                    </div>
+                </div>
+
+                <!-- Item 2 (Left) -->
+                <div class="timeline-item left gs-reveal timeline-anim">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content glass-panel" data-tilt data-tilt-max="5" data-tilt-glare
+                        data-tilt-max-glare="0.2">
+                        <span class="date neon-text">Juillet - Août 2025</span>
+                        <h3>Stage Data Science</h3>
+                        <h4>Smart Automation Technologies</h4>
+                        <ul class="tech-list">
+                            <li>Étude prédictive sur l'espérance de vie et dépendance.</li>
+                            <li>Modèles : Régression linéaire, SVR, Random Forest.</li>
+                            <li>Visualisation de données sous Pandas et Seaborn.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Item 3 (Right) -->
+                <div class="timeline-item right gs-reveal timeline-anim">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content glass-panel" data-tilt data-tilt-max="5" data-tilt-glare
+                        data-tilt-max-glare="0.2">
+                        <span class="date neon-text">2021 - 2022</span>
+                        <h3>Baccalauréat en Sciences Physiques</h3>
+                        <h4>Lycée Moulay Rchid</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="skills section">
+            <div class="section-header gs-reveal">
+                <h2>Tech <span class="neon-text">Stack</span></h2>
+                <div class="glow-line"></div>
+            </div>
+
+            <div class="hex-grid gs-reveal">
+                <!-- Group 1: Core Web & Langs -->
+                <div class="hex-wrap" title="JavaScript">
+                    <div class="hex glass-panel">
+                        <i class="fab fa-js-square" style="color: #f7df1e;"></i>
+                    </div>
+                </div>
+                <div class="hex-wrap" title="Python">
+                    <div class="hex glass-panel">
+                        <i class="fab fa-python" style="color: #3776ab;"></i>
+                    </div>
+                </div>
+                <div class="hex-wrap" title="React">
+                    <div class="hex glass-panel">
+                        <i class="fab fa-react" style="color: #61dafb;"></i>
+                    </div>
+                </div>
+                <!-- Group 2: Frameworks -->
+                <div class="hex-wrap" title="Angular">
+                    <div class="hex glass-panel">
+                        <i class="fab fa-angular" style="color: #dd0031;"></i>
+                    </div>
+                </div>
+                <div class="hex-wrap" title="Vue.js">
+                    <div class="hex glass-panel">
+                        <i class="fab fa-vuejs" style="color: #4fc08d;"></i>
+                    </div>
+                </div>
+                <div class="hex-wrap" title="Node.js">
+                    <div class="hex glass-panel">
+                        <i class="fab fa-node-js" style="color: #339933;"></i>
+                    </div>
+                </div>
+                <!-- Group 3: Data & DevOps -->
+                <div class="hex-wrap" title="Database SQL">
+                    <div class="hex glass-panel">
+                        <i class="fas fa-database" style="color: #336791;"></i>
+                    </div>
+                </div>
+                <div class="hex-wrap" title="Docker">
+                    <div class="hex glass-panel">
+                        <i class="fab fa-docker" style="color: #2496ed;"></i>
+                    </div>
+                </div>
+                <div class="hex-wrap" title="Git/GitHub">
+                    <div class="hex glass-panel">
+                        <i class="fab fa-github" style="color: #ffffff;"></i>
+                    </div>
+                </div>
+                <div class="hex-wrap" title="Java/C++">
+                    <div class="hex glass-panel">
+                        <i class="fas fa-cogs" style="color: #e34f26;"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects section">
+            <div class="section-header gs-reveal">
+                <h2>Selected <span class="neon-text">Works</span></h2>
+                <div class="glow-line"></div>
+            </div>
+
+            <!-- Swiper Slider Container -->
+            <div class="swiper project-slider gs-reveal">
+                <div class="swiper-wrapper">
+
+                    <!-- Project 1 -->
+                    <div class="swiper-slide">
+                        <div class="project-card glass-panel project-anim">
+                            <div class="project-img-container">
+                                <div class="project-overlay">
+                                    <a href="https://github.com/SomiaJdia" target="_blank" class="view-btn"><i
+                                            class="fas fa-external-link-alt"></i></a>
+                                    <a href="https://github.com/SomiaJdia" target="_blank" class="view-btn"><i
+                                            class="fab fa-github"></i></a>
+                                </div>
+                                <img src="clara.png" alt="Projet Clara" class="project-real-img">
+                            </div>
+                            <div class="project-content">
+                                <h3>Projet Clara (AI Assistant)</h3>
+                                <p>Web app avec assistant IA autonome (Groq API LLM). Intégration de modèles ML
+                                    (prédictions retraite) avec interface visuelle fluide.</p>
+                                <div class="tags">
+                                    <span class="glow-tag">FastAPI</span>
+                                    <span class="glow-tag">React</span>
+                                    <span class="glow-tag">AI/ML</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="swiper-slide">
+                        <div class="project-card glass-panel project-anim">
+                            <div class="project-img-container">
+                                <div class="project-overlay">
+                                    <a href="https://github.com/SomiaJdia" target="_blank" class="view-btn"><i
+                                            class="fab fa-github"></i></a>
+                                </div>
+                                <img src="roadmap.png" alt="Roadmap Builder" class="project-real-img">
+                            </div>
+                            <div class="project-content">
+                                <h3>Roadmap Builder</h3>
+                                <p>Plateforme full-stack d'apprentissage. Éditeur "drag-and-drop", import/export JSON,
+                                    backend sécurisé et workflow Docker.</p>
+                                <div class="tags">
+                                    <span class="glow-tag">React</span>
+                                    <span class="glow-tag">Node/PG</span>
+                                    <span class="glow-tag">Docker</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="swiper-slide">
+                        <div class="project-card glass-panel project-anim">
+                            <div class="project-img-container">
+                                <div class="project-overlay">
+                                    <a href="https://github.com/SomiaJdia" target="_blank" class="view-btn"><i
+                                            class="fab fa-github"></i></a>
+                                </div>
+                                <img src="art.png" alt="Art Génératif Interactive" class="project-real-img">
+                            </div>
+                            <div class="project-content">
+                                <h3>Art Génératif Interactive</h3>
+                                <p>Application web artistique permettant la création, manipulation et animation de
+                                    formes génératives avec un backend robuste.</p>
+                                <div class="tags">
+                                    <span class="glow-tag">Python</span>
+                                    <span class="glow-tag">Flask</span>
+                                    <span class="glow-tag">Pygame</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 4 (Ajouté du CV) -->
+                    <div class="swiper-slide">
+                        <div class="project-card glass-panel project-anim">
+                            <div class="project-img-container">
+                                <div class="project-overlay">
+                                    <a href="https://github.com/SomiaJdia" target="_blank" class="view-btn"><i
+                                            class="fab fa-github"></i></a>
+                                </div>
+                                <img src="softskills.jpg" alt="Plateforme Soft Skills" class="project-real-img">
+                            </div>
+                            <div class="project-content">
+                                <h3>Plateforme Soft Skills</h3>
+                                <p>Projet web de développement personnel. Interface frontend moderne (suivi, quiz,
+                                    modules) couplée à une API Express complète.</p>
+                                <div class="tags">
+                                    <span class="glow-tag">Vue.js</span>
+                                    <span class="glow-tag">Express.js</span>
+                                    <span class="glow-tag">Node</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Pagination / Nav pour Swiper -->
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact section">
+            <div class="section-header gs-reveal">
+                <h2>Initiate <span class="neon-text">Connection</span></h2>
+                <div class="glow-line"></div>
+            </div>
+
+            <div class="contact-container gs-reveal">
+                <!-- Animation 3D Globe -->
+                <div id="contact-globe" class="glass-panel"
+                    style="min-height: 400px; position: relative; overflow: hidden; display: flex; justify-content: center; align-items: center;">
+                    <!-- Three.js will inject the globe here -->
+                </div>
+
+                <!-- Infos et Liens -->
+                <div class="contact-info">
+                    <div class="info-card glass-panel" data-tilt>
+                        <i class="fas fa-envelope neon-text icon-large"></i>
+                        <h3>Transmission</h3>
+                        <a href="mailto:jdiasomia16@gmail.com">jdiasomia16@gmail.com</a>
+                    </div>
+                    <div class="info-card glass-panel" data-tilt>
+                        <i class="fas fa-map-marker-alt neon-text icon-large"></i>
+                        <h3>Location Hub</h3>
+                        <p>Tanger, Maroc</p>
+                    </div>
+                    <div class="social-grid">
+                        <a href="https://github.com/SomiaJdia" target="_blank" class="social-box glass-panel" data-tilt>
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/jdia-somia-648980292/" target="_blank"
+                            class="social-box glass-panel" data-tilt>
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="tel:+212625156765" class="social-box glass-panel" data-tilt>
+                            <i class="fas fa-phone-alt"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="glass-panel">
+        <p>System initialized 2026 © Jdia Somia. All nodes secure.</p>
+    </footer>
+
+    <!-- Librairies Externes CDN -->
+    <!-- GSAP pour animations poussées -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <!-- Three.js pour la 3D -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <!-- Vanila Tilt -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+    <!-- Script principal -->
+    <script src="script.js"></script>
+</body>
+
+</html>
